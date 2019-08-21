@@ -1,35 +1,29 @@
 import 'package:flutter/material.dart';
 
-class Display extends StatefulWidget {
+class Display extends StatelessWidget {
 
-	Display({Key key, this.value, this.height}) : super(key: key);
+	Display({ Key key, this.value, this.height }) : super(key: key);
 
 	final String value;
 	final double height;
 
-	@override
-	_DisplayState createState() => _DisplayState();
-}
+	String get _output => value.toString();
+	double get _margin => (height / 10);
 
-class _DisplayState extends State<Display> {
-
-	String get _output => widget.value.toString();
-	double get _margin => (widget.height / 10);
-
-	LinearGradient _gradient = const LinearGradient(colors: [ Colors.black26, Colors.black45 ]);
+	final LinearGradient _gradient = const LinearGradient(colors: [ Colors.black26, Colors.black45 ]);
 
 	@override
-	Widget build(BuildContext context) {		
+	Widget build(BuildContext context) {
 		
 		TextStyle style = Theme.of(context).textTheme.display2
 			.copyWith(color: Colors.white, fontWeight: FontWeight.w200);
 
 		return Container(
 			padding: EdgeInsets.only(top: _margin, bottom: _margin),
-			constraints: BoxConstraints.expand(height: widget.height),
+			constraints: BoxConstraints.expand(height: height),
 			child: Container(
 				padding: EdgeInsets.fromLTRB(32, 32, 32, 32),
-				constraints: BoxConstraints.expand(height: widget.height - (_margin)),
+				constraints: BoxConstraints.expand(height: height - (_margin)),
 				decoration: BoxDecoration(gradient: _gradient),
 				child: Text(_output, style: style, textAlign: TextAlign.right, )
 			)

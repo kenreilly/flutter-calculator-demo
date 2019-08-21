@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_calculator_demo/display.dart';
-import 'package:flutter_calculator_demo/calculator-key.dart';
 import 'package:flutter_calculator_demo/key-controller.dart';
-import 'package:flutter_calculator_demo/key-symbol.dart';
 import 'package:flutter_calculator_demo/key-pad.dart';
 import 'package:flutter_calculator_demo/processor.dart';
 
 class Calculator extends StatefulWidget {
 
-	Calculator({Key key, this.title}) : super(key: key);
-	final String title;
+	Calculator({ Key key }) : super(key: key);
 
 	@override
 	_CalculatorState createState() => _CalculatorState();
