@@ -1,0 +1,14 @@
+{	
+	"[dart]": {
+		"editor.tabSize": 4,
+		"editor.insertSpaces": false,
+		"editor.detectIndentation": false,
+	},
+	"[java]":{
+		"editor.tabSize": 4,
+		"editor.insertSpaces": true,
+		"editor.detectIndentation": false,
+	},
+	"dart.closingLabels": false,
+	"java.configuration.updateBuildConfiguration": "automatic"
+}
