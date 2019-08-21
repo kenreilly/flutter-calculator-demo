@@ -4,7 +4,7 @@ import 'package:flutter_calculator_demo/key-symbol.dart';
 
 abstract class Keys {
 
-	static final KeySymbol clear = const KeySymbol('C');
+	static KeySymbol clear = const KeySymbol('C');
 	static KeySymbol sign = const KeySymbol('±');
 	static KeySymbol percent = const KeySymbol('%');
 	static KeySymbol divide = const KeySymbol('÷');

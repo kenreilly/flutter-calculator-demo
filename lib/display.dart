@@ -14,7 +14,7 @@ class Display extends StatefulWidget {
 class _DisplayState extends State<Display> {
 
 	String get _output => widget.value.toString();
-	double get _margin => (widget.height / 8);
+	double get _margin => (widget.height / 10);
 
 	LinearGradient _gradient = const LinearGradient(colors: [ Colors.black26, Colors.black45 ]);
 
