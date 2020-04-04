@@ -54,7 +54,7 @@ class CalculatorKey extends StatelessWidget {
 	Widget build(BuildContext context) {
 
 		double size = MediaQuery.of(context).size.width / 4;
-		TextStyle style = Theme.of(context).textTheme.display1.copyWith(color: Colors.white);
+		TextStyle style = Theme.of(context).textTheme.headline4.copyWith(color: Colors.white);
 
 		return Container(
 			

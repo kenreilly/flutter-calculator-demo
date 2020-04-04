@@ -4,6 +4,7 @@ FLUTTER_APPLICATION_PATH=/Users/kennethreilly/source/public/flutter-calculator-d
 FLUTTER_TARGET=/Users/kennethreilly/source/public/flutter-calculator-demo/lib/main.dart
 FLUTTER_BUILD_DIR=build
 SYMROOT=${SOURCE_ROOT}/../build/ios
+OTHER_LDFLAGS=$(inherited) -framework Flutter
 FLUTTER_FRAMEWORK_DIR=/Users/kennethreilly/Library/flutter/bin/cache/artifacts/engine/ios
 FLUTTER_BUILD_NAME=1.0.0
 FLUTTER_BUILD_NUMBER=1
