@@ -25,7 +25,7 @@ class Display extends StatelessWidget {
 				padding: EdgeInsets.fromLTRB(32, 32, 32, 32),
 				constraints: BoxConstraints.expand(height: height - (_margin)),
 				decoration: BoxDecoration(gradient: _gradient),
-				child: Text(_output, style: style, textAlign: TextAlign.right, )
+				child: Text(_output, style: style, textAlign: TextAlign.right, key: ValueKey('output'))
 			)
 		);
 	}

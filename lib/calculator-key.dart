@@ -66,6 +66,7 @@ class CalculatorKey extends StatelessWidget {
 				color: color,
 				elevation: 4,
 				child: Text(symbol.value, style: style),
+				key: ValueKey(this.symbol.value.toString()),
 				onPressed: () => _fire(this),
 			)
 		);
