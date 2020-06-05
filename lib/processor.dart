@@ -22,7 +22,7 @@ abstract class Processor {
 
 	static String get _equation => _valA
 		+ (_operator != null ? ' ' + _operator.value : '')
-		+ (_valB != '0' ? ' ' + _valB : '');
+		+ ((_valB != '0' && _operator != null) ? ' ' + _valB : '');
 
 	static dispose() => _controller.close();
 
@@ -44,7 +44,13 @@ abstract class Processor {
 
 	static void handleFunction(CalculatorKey key) {
 
-		if (_valA == '0') { return; }
+		//Edit to put in new if and put return in else statement
+		if (_valA == '0') { 
+			if(key.symbol == Keys.decimal){_result = _valA + '.'; 
+			// _condense();
+			}
+			else{ return; }
+			}
 		if (_result != null) { _condense(); }
 
 		Map<KeySymbol, dynamic> table = {
@@ -97,14 +103,17 @@ abstract class Processor {
 	}
 
 	static void _decimal() {
-
+		//EDIT
 		if (_valB != '0' && !_valB.contains('.')) { _valB = _valB + '.'; }
+		//Added to Fix, without _operator != null we get '0. 0.' as output
+		else if(_valB == '0' && _operator != null && !_valB.contains('.')) {_valB = _valB + '.'; }
 		else if (_valA != '0' && !_valA.contains('.')) { _valA = _valA + '.'; }
 	}
 
+	//ERROR HERE
 	static void _calculate() {
 
-		if (_operator == null || _valB == '0') { return; }
+		if (_operator == null || (_valB == '0' || _valB == '0.')) { return; }
 
 		Map<KeySymbol, dynamic> table = {
 			Keys.divide: (a, b) => (a / b),
@@ -114,7 +123,8 @@ abstract class Processor {
 		};
 
 		double result = table[_operator](double.parse(_valA), double.parse(_valB));
-		String str = result.toString();
+		//Added to Fix Floating Point Arithmetic Imprecision Errors
+		String str = result.toStringAsPrecision(6);
 
 		while ((str.contains('.') && str.endsWith('0')) || str.endsWith('.')) { 
 			str = str.substring(0, str.length - 1); 
