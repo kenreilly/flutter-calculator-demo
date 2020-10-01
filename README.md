@@ -1,8 +1,6 @@
 # flutter_calculator_demo
 Example project demonstrating how to build a calculator app in Flutter
 
-![](preview.gif)
-
 ## Getting Started
 To build and run this project:
 
@@ -13,5 +11,11 @@ To build and run this project:
 
 (Please note that a Mac with XCode is required to build for iOS)
 
+## Demo
+
+![](preview.gif)
+
 ## Contributing
 Questions, comments, suggestions, and other contributions are welcome, as this is an open-source example project and not officially maintained as part of an application or library etc. 
+
+
